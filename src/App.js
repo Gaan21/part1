@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import Mensaje from './Mensaje';
+
+//Los componentes se deben de crear fuera de otros componentes
+const Titulo = () => {   //Mayusculas, si no da error
+  return <h1>Hola mundo</h1>
+}
+
+
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Titulo />
+      <Titulo />
+      <Mensaje color = 'red' msg = 'Hola' />
+      <Mensaje color = 'blue' msg = 'Mundo' />
+      
     </div>
   );
 }
