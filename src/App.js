@@ -1,24 +1,26 @@
-
+import React from 'react'
 import './App.css';
-import Mensaje from './Mensaje';
 
-//Los componentes se deben de crear fuera de otros componentes
-const Titulo = () => {   //Mayusculas, si no da error
-  return <h1>Hola mundo</h1>
+
+const Hello = ( {name,age} ) => {
+
+    const bornYear = () => new Date().getFullYear() -age
+
+    return (
+        <div>
+            <p> Hello {name} you are {age} years old</p>
+            <p>You born in {bornYear()} </p>
+        </div>
+    )
 }
-
 
 const App = () => {
-
-  return (
-    <div className="App">
-      <Titulo />
-      <Titulo />
-      <Mensaje color = 'red' msg = 'Hola' />
-      <Mensaje color = 'blue' msg = 'Mundo' />
-      
-    </div>
-  );
+    return (
+        <div>
+            <Hello name={'Luciano'} age={30} />
+        </div>
+    )
 }
+
 
 export default App;
